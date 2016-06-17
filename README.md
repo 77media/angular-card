@@ -1,21 +1,20 @@
-angular-card
+ssm-angular-card
 ============
 
 Angular directive for card https://github.com/jessepollak/card
 
-![screen shot 2014-12-20 at 4 37 52 pm](https://cloud.githubusercontent.com/assets/507195/5514998/9a252c80-8866-11e4-81ad-dea3dc5e6870.png)
+## Screenshot
+
+TODO
 
 ## Demo
 
-http://jessepollak.github.io/card/
+TODO
 
 ## Installation
 
 ### bower
-`bower install angular-card`
-
-### npm
-`npm install angular-card`
+`bower install ssm-angular-card`
 
 ##Usage
 
@@ -37,7 +36,8 @@ http://jessepollak.github.io/card/
     <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
   </div>
   <div>
-    <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+    <input placeholder="MM" type="text" name="CardMonth" card-expiry data-ng-model="card.month" />/
+    <input placeholder="YY" type="text" name="CardYear" card-expiry data-ng-model="card.year" />
 
     <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
 

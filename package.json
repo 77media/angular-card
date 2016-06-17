@@ -1,31 +1,35 @@
 {
-  "name": "angular-card",
-  "version": "0.3.7",
-  "description": "Angular directive for card https://github.com/jessepollak/card",
+  "name": "ssm-angular-card",
+  "version": "0.0.1",
+  "description": "Angular directive for visual credit card input and validation.",
   "main": "src/card.js",
   "directories": {
-    "example": "example"
+    "example": "example",
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gavruk@github.com/gavruk/angular-card.git"
+    "url": "git+https://github.com/77media/ssm-angular-card"
   },
   "keywords": [
     "angular",
     "credit",
     "card"
   ],
-  "author": "Sergey Gavruk <svgavruk@gmail.com>",
+  "author": "Aaron King <aking@77media.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gavruk/angular-card/issues"
+    "url": "https://github.com/77media/ssm-angular-card/issues"
   },
-  "homepage": "https://github.com/gavruk/angular-card#readme",
+  "homepage": "https://github.com/77media/ssm-angular-card#readme",
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "gulp": "~3.8.5"
+  },
   "dependencies": {
-    "card": "~1.2.2",
     "angular": "~1.4.8"
   }
 }
