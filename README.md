@@ -51,13 +51,14 @@ TODO
 ```
 
 ```js
-angular.module('app', ['gavruk.card'])
+angular.module('app', ['ssm.card'])
 .controller('ExampleCtrl', ['$scope', function($scope) {
 
   $scope.card = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
-    expiry: '11 / 2020',
+    expiryMonth: '11',
+    expiryYear: '18',
     cvc: '123'
   };
 
@@ -70,7 +71,8 @@ angular.module('app', ['gavruk.card'])
 
   $scope.cardMessages = {
     validDate: 'valid\nthru',
-    monthYear: 'MM/YYYY',
+    month: 'MM',
+    year: 'YY'
   };
 
   $scope.cardOptions = {
