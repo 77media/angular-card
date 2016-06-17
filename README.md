@@ -1,7 +1,9 @@
 ssm-angular-card
 ============
 
-Angular directive for card https://github.com/jessepollak/card
+Angular directive for visual credit card input and validation.
+
+This is forked from https://github.com/gavruk/angular-card and https://github.com/jessepollak/card with inspiration from https://github.com/bendrucker/angular-credit-cards also.
 
 ## Screenshot
 
