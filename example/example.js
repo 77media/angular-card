@@ -1,17 +1,19 @@
-angular.module('app', ['gavruk.card'])
+angular.module('app', ['ssm.card'])
 
 .controller('ExampleCtrl', ['$scope', function($scope) {
 
   var card1 = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
-    expiry: '11 / 2020',
+    expiryMonth: '11',
+    expiryYear: '18',
     cvc: '123'
   };
   var card2 = {
     name: 'Bill Smith',
     number: '4321 4321 4321 4321',
-    expiry: '02 / 2018',
+    expiryMonth: '02',
+    expiryYear: '18',
     cvc: '591'
   };
 
@@ -42,7 +44,8 @@ angular.module('app', ['gavruk.card'])
 
   $scope.cardMessages = {
     validDate: 'valid\nthru',
-    monthYear: 'MM/YYYY',
+    month: 'MM',
+    year: 'YY'
   };
 
   $scope.cardOptions = {

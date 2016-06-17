@@ -3,7 +3,7 @@ var hasRequire = typeof require === 'function';
 (function (window, document, Card, angular, undefined) {
   'use strict';
   angular
-    .module('gavruk.card', [])
+    .module('ssm.card', [])
 
   .controller('CardCtrl', ['$scope', function ($scope) {
   }])
@@ -205,5 +205,5 @@ var hasRequire = typeof require === 'function';
 })(window, window.document, hasRequire ? require('card') : window.Card, hasRequire ? require('angular') : window.angular);
 
 if(typeof module !== 'undefined') {
-  module.exports = 'gavruk.card';
+  module.exports = 'ssm.card';
 }

@@ -1,21 +1,22 @@
-angular-card
+ssm-angular-card
 ============
 
-Angular directive for card https://github.com/jessepollak/card
+Angular directive for visual credit card input and validation.
 
-![screen shot 2014-12-20 at 4 37 52 pm](https://cloud.githubusercontent.com/assets/507195/5514998/9a252c80-8866-11e4-81ad-dea3dc5e6870.png)
+This is forked from https://github.com/gavruk/angular-card and https://github.com/jessepollak/card with inspiration from https://github.com/bendrucker/angular-credit-cards also.
+
+## Screenshot
+
+TODO
 
 ## Demo
 
-http://jessepollak.github.io/card/
+TODO
 
 ## Installation
 
 ### bower
-`bower install angular-card`
-
-### npm
-`npm install angular-card`
+`bower install ssm-angular-card`
 
 ##Usage
 
@@ -37,7 +38,8 @@ http://jessepollak.github.io/card/
     <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
   </div>
   <div>
-    <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+    <input placeholder="MM" type="text" name="CardMonth" card-expiry data-ng-model="card.month" />/
+    <input placeholder="YY" type="text" name="CardYear" card-expiry data-ng-model="card.year" />
 
     <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
 
@@ -49,13 +51,14 @@ http://jessepollak.github.io/card/
 ```
 
 ```js
-angular.module('app', ['gavruk.card'])
+angular.module('app', ['ssm.card'])
 .controller('ExampleCtrl', ['$scope', function($scope) {
 
   $scope.card = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
-    expiry: '11 / 2020',
+    expiryMonth: '11',
+    expiryYear: '18',
     cvc: '123'
   };
 
@@ -68,7 +71,8 @@ angular.module('app', ['gavruk.card'])
 
   $scope.cardMessages = {
     validDate: 'valid\nthru',
-    monthYear: 'MM/YYYY',
+    month: 'MM',
+    year: 'YY'
   };
 
   $scope.cardOptions = {

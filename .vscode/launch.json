@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch example.html",
+            "type": "chrome",
+            "request": "launch",
+            "url": "file:///c:/Source/ssm-angular-card/example/example.html",
+            "file": "${workspaceRoot}/example/example.html",
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}

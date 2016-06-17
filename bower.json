@@ -1,10 +1,11 @@
 {
-  "name": "angular-card",
-  "version": "0.3.7",
+  "name": "ssm-angular-card",
+  "version": "0.0.1",
   "authors": [
-    "Sergey Gavruk <svgavruk@gmail.com>"
+    "Aaron King <aking@77media.com>",
+    "Matt Long <mlong@77media.com>"
   ],
-  "description": "Angular directive for card https://github.com/jessepollak/card",
+  "description": "Angular directive for visual credit card input and validation.",
   "main": "src/card.js",
   "keywords": [
     "card",
@@ -13,7 +14,6 @@
     "credit"
   ],
   "dependencies": {
-    "card": "~1.2.2",
     "angular": "~1.4.8"
   },
   "license": "MIT",
