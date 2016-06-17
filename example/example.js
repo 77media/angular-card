@@ -21,7 +21,7 @@ angular.module('app', ['ssm.card'])
   $scope.card = card1;
 
   $scope.changeCard = function() {
-    if (selectedCard == 1) {
+    if (selectedCard === 1) {
       $scope.card = card2;
       selectedCard = 2;
     } else {
