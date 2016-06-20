@@ -3,17 +3,17 @@
 
 $fill-color: #0B2C5F;
 
-.jp-card.jp-card-maestro {
-    &.jp-card-identified {
-        .jp-card-front, .jp-card-back {
-            .jp-card-logo.jp-card-maestro {
+.ssm-card.ssm-card-maestro {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            .ssm-card-logo.ssm-card-maestro {
                 box-shadow: none;
             }
             &:before {
                 background-color: $fill-color;
             }
         }
-        .jp-card-logo.jp-card-maestro {
+        .ssm-card-logo.ssm-card-maestro {
             opacity: 1;
         }
     }

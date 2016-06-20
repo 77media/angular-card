@@ -3,14 +3,14 @@
 
 $fill-color: #6F6969;
 
-.jp-card.jp-card-elo {
-    &.jp-card-identified {
-        .jp-card-front, .jp-card-back {
+.ssm-card.ssm-card-elo {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
             &:before {
                 background-color: $fill-color;
             }
         }
-        .jp-card-logo.jp-card-elo {
+        .ssm-card-logo.ssm-card-elo {
             opacity: 1;
         }
     }

@@ -59,10 +59,10 @@ Card.prototype.bindVal = function (el, out, opts) {
       return results;
     })();
     QJ.on(el, 'focus', function () {
-      return QJ.addClass(out, 'jp-card-focused');
+      return QJ.addClass(out, 'ssm-card-focused');
     });
     QJ.on(el, 'blur', function () {
-      return QJ.removeClass(out, 'jp-card-focused');
+      return QJ.removeClass(out, 'ssm-card-focused');
     });
     QJ.on(el, 'keyup change paste', function (e) {
       var elem, filter, i, j, join, k, len, len1, outEl, outVal, ref, results, val;
@@ -102,7 +102,7 @@ Card.prototype.bindVal = function (el, out, opts) {
 
 
 
-Card.prototype.cardTemplate = '' + '<div class="jp-card-container">' + '<div class="jp-card">' + '<div class="jp-card-front">' + '<div class="jp-card-logo jp-card-elo">' + '<div class="e">e</div>' + '<div class="l">l</div>' + '<div class="o">o</div>' + '</div>' + '<div class="jp-card-logo jp-card-visa">visa</div>' + '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' + '<div class="jp-card-logo jp-card-maestro">Maestro</div>' + '<div class="jp-card-logo jp-card-amex"></div>' + '<div class="jp-card-logo jp-card-discover">discover</div>' + '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' + '<div class="jp-card-lower">' + '<div class="jp-card-shiny"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-number jp-card-display">{{number}}</div>' + '<div class="jp-card-name jp-card-display">{{name}}</div>' + '<div class="jp-card-expiry jp-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="jp-card-back">' + '<div class="jp-card-bar"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
+Card.prototype.cardTemplate = '' + '<div class="ssm-card-container">' + '<div class="ssm-card">' + '<div class="ssm-card-front">' + '<div class="ssm-card-logo ssm-card-elo">' + '<div class="e">e</div>' + '<div class="l">l</div>' + '<div class="o">o</div>' + '</div>' + '<div class="ssm-card-logo ssm-card-visa">visa</div>' + '<div class="ssm-card-logo ssm-card-mastercard">MasterCard</div>' + '<div class="ssm-card-logo ssm-card-maestro">Maestro</div>' + '<div class="ssm-card-logo ssm-card-amex"></div>' + '<div class="ssm-card-logo ssm-card-discover">discover</div>' + '<div class="ssm-card-logo ssm-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' + '<div class="ssm-card-lower">' + '<div class="ssm-card-shiny"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-number ssm-card-display">{{number}}</div>' + '<div class="ssm-card-name ssm-card-display">{{name}}</div>' + '<div class="ssm-card-expiry ssm-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="ssm-card-back">' + '<div class="ssm-card-bar"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
 
 Card.prototype.template = function (tpl, data) {
   return tpl.replace(/\{\{(.*?)\}\}/g, function (match, key, str) {
@@ -110,7 +110,7 @@ Card.prototype.template = function (tpl, data) {
   });
 };
 
-Card.prototype.cardTypes = ['jp-card-amex', 'jp-card-dankort', 'jp-card-dinersclub', 'jp-card-discover', 'jp-card-jcb', 'jp-card-laser', 'jp-card-maestro', 'jp-card-mastercard', 'jp-card-unionpay', 'jp-card-visa', 'jp-card-visaelectron', 'jp-card-elo'];
+Card.prototype.cardTypes = ['ssm-card-amex', 'ssm-card-dankort', 'ssm-card-dinersclub', 'ssm-card-discover', 'ssm-card-jcb', 'ssm-card-laser', 'ssm-card-maestro', 'ssm-card-mastercard', 'ssm-card-unionpay', 'ssm-card-visa', 'ssm-card-visaelectron', 'ssm-card-elo'];
 
 Card.prototype.defaults = {
   formatting: true,
@@ -121,12 +121,12 @@ Card.prototype.defaults = {
     nameInput: 'input[name="name"]'
   },
   cardSelectors: {
-    cardContainer: '.jp-card-container',
-    card: '.jp-card',
-    numberDisplay: '.jp-card-number',
-    expiryDisplay: '.jp-card-expiry',
-    cvcDisplay: '.jp-card-cvc',
-    nameDisplay: '.jp-card-name'
+    cardContainer: '.ssm-card-container',
+    card: '.ssm-card',
+    numberDisplay: '.ssm-card-number',
+    expiryDisplay: '.ssm-card-expiry',
+    cvcDisplay: '.ssm-card-cvc',
+    nameDisplay: '.ssm-card-name'
   },
   messages: {
     validDate: 'valid\nthru',
@@ -139,8 +139,8 @@ Card.prototype.defaults = {
     name: 'Full Name'
   },
   classes: {
-    valid: 'jp-card-valid',
-    invalid: 'jp-card-invalid'
+    valid: 'ssm-card-valid',
+    invalid: 'ssm-card-invalid'
   },
   debug: false
 };
@@ -176,14 +176,14 @@ Card.prototype.render = function () {
   if (typeof navigator !== "undefined" && navigator !== null ? navigator.userAgent : void 0) {
     ua = navigator.userAgent.toLowerCase();
     if (ua.indexOf('safari') !== -1 && ua.indexOf('chrome') === -1) {
-      QJ.addClass(this.$card, 'jp-card-safari');
+      QJ.addClass(this.$card, 'ssm-card-safari');
     }
   }
   if (/MSIE 10\./i.test(navigator.userAgent)) {
-    QJ.addClass(this.$card, 'jp-card-ie-10');
+    QJ.addClass(this.$card, 'ssm-card-ie-10');
   }
   if (/rv:11.0/i.test(navigator.userAgent)) {
-    return QJ.addClass(this.$card, 'jp-card-ie-11');
+    return QJ.addClass(this.$card, 'ssm-card-ie-11');
   }
 };
 
@@ -294,19 +294,19 @@ Card.prototype.handlers = {
     var cardType;
     cardType = e.data;
     if (!QJ.hasClass(this.$card, cardType)) {
-      QJ.removeClass(this.$card, 'jp-card-unknown');
+      QJ.removeClass(this.$card, 'ssm-card-unknown');
       QJ.removeClass(this.$card, this.cardTypes.join(' '));
-      QJ.addClass(this.$card, "jp-card-" + cardType);
-      QJ.toggleClass(this.$card, 'jp-card-identified', cardType !== 'unknown');
+      QJ.addClass(this.$card, "ssm-card-" + cardType);
+      QJ.toggleClass(this.$card, 'ssm-card-identified', cardType !== 'unknown');
       this.cardType = cardType;
       return this.cardType;
     }
   },
   flipCard: function () {
-    return QJ.addClass(this.$card, 'jp-card-flipped');
+    return QJ.addClass(this.$card, 'ssm-card-flipped');
   },
   unflipCard: function () {
-    return QJ.removeClass(this.$card, 'jp-card-flipped');
+    return QJ.removeClass(this.$card, 'ssm-card-flipped');
   }
 };
 

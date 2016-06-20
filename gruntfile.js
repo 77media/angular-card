@@ -10,9 +10,8 @@ var _ = require('lodash'),
     './src/payment.js',
     './src/card.js',
     './src/directive.js'],
-  cssFiles = './src/**.css',
-  sassFiles = './src/**.scss',
-  lessFiles = './src/**.less',
+  cssFiles = './src/scss/card.css',
+  sassFiles = './src/scss/card.scss',
   fs = require('fs'),
   path = require('path');
 
@@ -53,13 +52,6 @@ module.exports = function (grunt) {
       clientSCSS: {
         files: sassFiles,
         tasks: ['sass', 'csslint'],
-        options: {
-          livereload: true
-        }
-      },
-      clientLESS: {
-        files: lessFiles,
-        tasks: ['less', 'csslint'],
         options: {
           livereload: true
         }
@@ -113,22 +105,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           src: sassFiles,
-          ext: '.css',
-          rename: function (base, src) {
-            return src.replace('/content/theme/', '/content/theme/');
-          }
-        }]
-      }
-    },
-    less: {
-      dist: {
-        files: [{
-          expand: true,
-          src: lessFiles,
-          ext: '.css',
-          rename: function (base, src) {
-            return src.replace('/content/theme/', '/content/theme/');
-          }
+          ext: '.css'
         }]
       }
     }
@@ -139,7 +116,7 @@ module.exports = function (grunt) {
 
 
   // Lint CSS and JavaScript files.
-  grunt.registerTask('lint', ['sass', 'less', 'jshint', 'csslint']);
+  grunt.registerTask('lint', ['sass', 'jshint', 'csslint']);
 
   // Lint project files and minify them into two production files.
   grunt.registerTask('build', ['env:dev', 'lint', 'ngAnnotate', 'uglify', 'cssmin']);

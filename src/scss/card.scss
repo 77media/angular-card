@@ -13,7 +13,7 @@
 @import "cards/dankort";
 @import "cards/elo";
 
-.jp-card-container {
+.ssm-card-container {
     @include perspective(1000px);
     width: $card-width;
     max-width: 100%;
@@ -23,7 +23,7 @@
     position: relative;
 }
 
-.jp-card {
+.ssm-card {
     font-family: $card-font-family;
     line-height: 1;
     position: relative;
@@ -40,11 +40,11 @@
     @include transform-style(preserve-3d);
     @include transition(all $card-transition-time linear);
 
-    &.jp-card-flipped {
+    &.ssm-card-flipped {
         @include transform(rotateY(180deg));
     }
 
-    .jp-card-front, .jp-card-back {
+    .ssm-card-front, .ssm-card-back {
         @include backface-visibility(hidden);
         @include transform-style(preserve-3d);
         @include transition(all $card-transition-time linear);
@@ -73,24 +73,24 @@
             @include shape();
         }
 
-        .jp-card-display {
+        .ssm-card-display {
             color: $card-font-color;
             font-weight: normal;
             opacity: 0.5;
             @include transition(opacity $card-transition-time linear);
-            &.jp-card-focused {
+            &.ssm-card-focused {
                 opacity: 1;
                 font-weight: 700;
                 &.valid {}
             }
         }
 
-        .jp-card-cvc {
+        .ssm-card-cvc {
             font-family: $card-monospace-font-family;
             font-size: 14px;
         }
 
-        .jp-card-shiny {
+        .ssm-card-shiny {
             $color: #CCC;
             $radius: 5px;
             width: 50px;
@@ -112,9 +112,9 @@
         }
     }
 
-    .jp-card-front {
+    .ssm-card-front {
 
-        .jp-card-logo{
+        .ssm-card-logo{
             position: absolute;
             opacity: 0;
             right: 5%;
@@ -122,7 +122,7 @@
             @include transition($card-transition-time);
         }
 
-        .jp-card-lower {
+        .ssm-card-lower {
             $width: 80%;
             width: $width;
             position: absolute;
@@ -134,21 +134,21 @@
                 left: 5%;
             }
 
-            .jp-card-cvc {
+            .ssm-card-cvc {
                 visibility: hidden;
                 float: right;
                 position: relative;
                 bottom: 5px;
             }
 
-            .jp-card-number {
+            .ssm-card-number {
                 font-family: $card-monospace-font-family;
                 font-size: 24px;
                 clear: both;
                 margin-bottom: 30px;
             }
 
-            .jp-card-expiry {
+            .ssm-card-expiry {
                 font-family: $card-monospace-font-family;
                 $label-padding: 5px;
                 letter-spacing: 0em;
@@ -183,7 +183,7 @@
                 }
             }
 
-            .jp-card-name {
+            .ssm-card-name {
                 text-transform: uppercase;
                 font-family: $card-monospace-font-family;
                 font-size: 20px;
@@ -200,13 +200,13 @@
         }
     }
 
-    .jp-card-back {
+    .ssm-card-back {
         @include transform(rotateY(180deg));
         $bar-top-offset: 40%;
         $signature-height: 16%;
         $signature-left: 2%;
 
-        .jp-card-bar {
+        .ssm-card-bar {
             @include linear-gradient(#444, #333);
             width: 100%;
             height: 20%;
@@ -224,14 +224,14 @@
             left: $signature-left;
         }
 
-        .jp-card-cvc {
+        .ssm-card-cvc {
             position: absolute;
             top: $bar-top-offset;
             left: 85%;
             @include transition-delay($card-transition-time + 200ms);
         }
 
-        .jp-card-shiny {
+        .ssm-card-shiny {
             position: absolute;
             top: $bar-top-offset + $signature-height + 10%;
             left: $signature-left;
@@ -249,10 +249,10 @@
         }
     }
 
-    &.jp-card-identified {
+    &.ssm-card-identified {
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
 
-        .jp-card-front, .jp-card-back {
+        .ssm-card-front, .ssm-card-back {
             background-color: #000;
             background-color: rgba(0, 0, 0, 0.5);
 
@@ -263,13 +263,13 @@
                 // box-shadow: inset 0 0 5px rgba(255,255,255,1);
             }
 
-            .jp-card-logo {
+            .ssm-card-logo {
                 box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
             }
         }
 
         &.no-radial-gradient {
-            .jp-card-front, .jp-card-back {
+            .ssm-card-front, .ssm-card-back {
                 &:before {
                     @include card-texture($radial-gradient: false);
                 }
