@@ -5,37 +5,52 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>SSM-Angular-Card Example</title>
-  <ling href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
   <link href="../lib/index.min.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body data-ng-app="app" data-ng-controller="ExampleCtrl">
-
-  <div class="row">
-    <div id="card-container"></div>
-  </div>
-  <div class="row">
-    <form action="#" name="cardForm" data-card data-width="500" data-card-container="#card-container" data-placeholders="cardPlaceholders"
-      data-options="cardOptions" data-messages="cardMessages">
-
-      <div>
-        <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
-
-        <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
+  <div class="container">
+    <header class="page-header">
+      <h1>SSM-Angular-Card Example</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="card-container"></div>
+        </div>
+        <div class="col-md-6">
+        </div>
       </div>
-      <div>
-        <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+      <div class="row">
+        <div class="col-md-6">
+          <form action="#" name="cardForm" data-card data-width="300" data-card-container="#card-container" data-placeholders="cardPlaceholders"
+            data-options="cardOptions" data-messages="cardMessages">
+            <label for="CardNumber" class="sr-only">Card Number</label>
+            <input placeholder="Card number" type="text" name="CardNumber" class="form-control" card-number data-ng-model="card.number"
+            />
+            <label for="CardName" class="sr-only">Full Name</label>
+            <input placeholder="Full name" type="text" name="CardName" class="form-control" card-name data-ng-model="card.name" />
+            <label for="CardExpiry" class="sr-only">Expiration (MM/YYYY)</label>
+            <input placeholder="MM / YYYY" type="text" name="CardExpiry" class="form-control" card-expiry data-ng-model="card.expiry"
+            />
+            <label for="CardCvc" class="sr-only">Cvc</label>
+            <input placeholder="CVC" type="text" name="CardCvc" class="form-control" card-cvc data-ng-model="card.cvc" />
 
-        <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+            <input type="button" value="Change card" class="btn btn-primary" data-ng-click="changeCard()" />
+            <input type="button" value="Clear" class="btn btn-secondary" data-ng-click="clear()" />
 
-        <input type="button" value="Change card" data-ng-click="changeCard()" />
-        <input type="button" value="Clear" data-ng-click="clear()" />
+          </form>
+        </div>
+        <div class="col-md-6">
+        </div>
       </div>
-
-    </form>
+    </div>
+    <hr />
+    <footer class="page-footer">
+      <p>© 2016 77media, Inc..</p>
+    </footer>
   </div>
-
-
   <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
   <script src="../lib/index.js" type="text/javascript"></script>
   <script src="example.js" type="text/javascript"></script>
