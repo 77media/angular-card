@@ -1,9 +1,10 @@
-var hasRequire = typeof require === 'function';
+'use strict';
 
-(function (window, document, Card, angular, undefined) {
-  'use strict';
-  angular
-    .module('ssm.card', [])
+// var angular = require('angular');
+// var Card = require('card');
+
+angular
+  .module('ssm.card', [])
 
   .controller('CardCtrl', ['$scope', function ($scope) {
   }])
@@ -202,8 +203,6 @@ var hasRequire = typeof require === 'function';
     };
   }]);
 
-})(window, window.document, hasRequire ? require('card') : window.Card, hasRequire ? require('angular') : window.angular);
 
-if(typeof module !== 'undefined') {
-  module.exports = 'ssm.card';
-}
+// module.exports = 'ssm.card';
+

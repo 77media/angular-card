@@ -4,14 +4,19 @@
  * Module dependencies.
  */
 var _ = require('lodash'),
-  sourceFiles = './src/**.js',
+  sourceFiles = [
+    './src/extend.js',
+    './src/QJ.js',
+    './src/payment.js',
+    './src/card.js',
+    './src/directive.js'],
   cssFiles = './src/**.css',
   sassFiles = './src/**.scss',
   lessFiles = './src/**.less',
   fs = require('fs'),
   path = require('path');
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   // Project Configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -30,7 +35,7 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      
+
       clientJS: {
         files: sourceFiles,
         tasks: ['jshint'],
@@ -109,7 +114,7 @@ module.exports = function(grunt) {
           expand: true,
           src: sassFiles,
           ext: '.css',
-          rename: function(base, src) {
+          rename: function (base, src) {
             return src.replace('/content/theme/', '/content/theme/');
           }
         }]
@@ -121,7 +126,7 @@ module.exports = function(grunt) {
           expand: true,
           src: lessFiles,
           ext: '.css',
-          rename: function(base, src) {
+          rename: function (base, src) {
             return src.replace('/content/theme/', '/content/theme/');
           }
         }]

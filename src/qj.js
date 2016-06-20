@@ -1,8 +1,6 @@
 'use strict';
 
-var QJ, rreturn, rtrim;
-
-QJ = function(selector) {
+var QJ = function(selector) {
   if (QJ.isDOMElement(selector)) {
     return selector;
   }
@@ -13,7 +11,7 @@ QJ.isDOMElement = function(el) {
   return el && (el.nodeName !== null);
 };
 
-rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
 
 QJ.trim = function(text) {
   if (text === null) {
@@ -23,12 +21,13 @@ QJ.trim = function(text) {
   }
 };
 
-rreturn = /\r/g;
+var rreturn = /\r/g;
 
 QJ.val = function(el, val) {
   var ret;
   if (arguments.length > 1) {
-    return el.value = val;
+    el.value = val;
+    return el.value;
   } else {
     ret = el.value;
     if (typeof ret === "string") {
@@ -161,7 +160,8 @@ QJ.removeClass = function(el, className) {
     }
     return results;
   } else {
-    return el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    return el.className;
   }
 };
 
@@ -227,5 +227,3 @@ QJ.trigger = function(el, name, data) {
   }
   return el.dispatchEvent(ev);
 };
-
-module.exports = QJ;

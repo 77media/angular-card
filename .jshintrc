@@ -22,7 +22,11 @@
     "_": true,
     "jQuery": false,
     "validthis": true,
-    "$clamp": false
+    "$clamp": false,
+    "extend": true,
+    "QJ": true,
+    "Payment": true,
+    "Card": true
   },
   "predef": [ // Extra globals.
     "inject",
