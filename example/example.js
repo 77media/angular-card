@@ -5,15 +5,13 @@ angular.module('app', ['ssm.card'])
   var card1 = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
-    expiryMonth: '11',
-    expiryYear: '18',
+    expiry: '11 / 2018',
     cvc: '123'
   };
   var card2 = {
     name: 'Bill Smith',
     number: '4321 4321 4321 4321',
-    expiryMonth: '02',
-    expiryYear: '18',
+    expiry: '02 / 2018',
     cvc: '591'
   };
 
@@ -38,14 +36,13 @@ angular.module('app', ['ssm.card'])
   $scope.cardPlaceholders = {
     name: 'Your Full Name',
     number: 'xxxx xxxx xxxx xxxx',
-    expiry: 'MM/YY',
+    expiry: 'MM/YYYY',
     cvc: 'xxx'
   };
 
   $scope.cardMessages = {
     validDate: 'valid\nthru',
-    month: 'MM',
-    year: 'YY'
+    monthYear: 'MM/YYYY'
   };
 
   $scope.cardOptions = {

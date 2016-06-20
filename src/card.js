@@ -6,7 +6,32 @@
 
 
 var Card = function (opts) {
-  var bindVal = function (el, out, opts) {
+  
+  if (opts === undefined) {
+
+  }
+  else {
+    this.options = extend(true, this.defaults, opts);
+    if (!this.options.form) {
+      console.log("Please provide a form");
+      return;
+    }
+    this.$el = QJ(this.options.form);
+    if (!this.options.container) {
+      console.log("Please provide a container");
+      return;
+    }
+    this.$container = QJ(this.options.container);
+    this.render();
+    this.attachHandlers();
+    this.handleInitialPlaceholders();
+  }
+
+  return Card;
+
+};
+
+Card.prototype.bindVal = function (el, out, opts) {
     var joiner, o, outDefaults;
     if (opts === null) {
       opts = {};
@@ -76,49 +101,18 @@ var Card = function (opts) {
   };
 
 
-  if (opts === undefined) {
 
-  }
-  else {
-    var toInitialize;
-    this.options = extend(true, this.defaults, opts);
-    if (!this.options.form) {
-      console.log("Please provide a form");
-      return;
-    }
-    this.$el = QJ(this.options.form);
-    if (!this.options.container) {
-      console.log("Please provide a container");
-      return;
-    }
-    this.$container = QJ(this.options.container);
-    toInitialize = QJ.isDOMElement(this.$container) ? this.$container : this.$container[0];
-    if (toInitialize.getAttribute(this.initializedDataAttr)) {
-      return;
-    }
-    toInitialize.setAttribute(this.initializedDataAttr, true);
-    this.render();
-    this.attachHandlers();
-    this.handleInitialPlaceholders();
-  }
+Card.prototype.cardTemplate = '' + '<div class="jp-card-container">' + '<div class="jp-card">' + '<div class="jp-card-front">' + '<div class="jp-card-logo jp-card-elo">' + '<div class="e">e</div>' + '<div class="l">l</div>' + '<div class="o">o</div>' + '</div>' + '<div class="jp-card-logo jp-card-visa">visa</div>' + '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' + '<div class="jp-card-logo jp-card-maestro">Maestro</div>' + '<div class="jp-card-logo jp-card-amex"></div>' + '<div class="jp-card-logo jp-card-discover">discover</div>' + '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' + '<div class="jp-card-lower">' + '<div class="jp-card-shiny"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-number jp-card-display">{{number}}</div>' + '<div class="jp-card-name jp-card-display">{{name}}</div>' + '<div class="jp-card-expiry jp-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="jp-card-back">' + '<div class="jp-card-bar"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
 
-  return Card;
-
-};
-
-Card.initializedDataAttr = "data-jp-card-initialized";
-
-Card.cardTemplate = '' + '<div class="jp-card-container">' + '<div class="jp-card">' + '<div class="jp-card-front">' + '<div class="jp-card-logo jp-card-elo">' + '<div class="e">e</div>' + '<div class="l">l</div>' + '<div class="o">o</div>' + '</div>' + '<div class="jp-card-logo jp-card-visa">visa</div>' + '<div class="jp-card-logo jp-card-mastercard">MasterCard</div>' + '<div class="jp-card-logo jp-card-maestro">Maestro</div>' + '<div class="jp-card-logo jp-card-amex"></div>' + '<div class="jp-card-logo jp-card-discover">discover</div>' + '<div class="jp-card-logo jp-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' + '<div class="jp-card-lower">' + '<div class="jp-card-shiny"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-number jp-card-display">{{number}}</div>' + '<div class="jp-card-name jp-card-display">{{name}}</div>' + '<div class="jp-card-expiry jp-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="jp-card-back">' + '<div class="jp-card-bar"></div>' + '<div class="jp-card-cvc jp-card-display">{{cvc}}</div>' + '<div class="jp-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
-
-Card.template = function (tpl, data) {
+Card.prototype.template = function (tpl, data) {
   return tpl.replace(/\{\{(.*?)\}\}/g, function (match, key, str) {
     return data[key];
   });
 };
 
-Card.cardTypes = ['jp-card-amex', 'jp-card-dankort', 'jp-card-dinersclub', 'jp-card-discover', 'jp-card-jcb', 'jp-card-laser', 'jp-card-maestro', 'jp-card-mastercard', 'jp-card-unionpay', 'jp-card-visa', 'jp-card-visaelectron', 'jp-card-elo'];
+Card.prototype.cardTypes = ['jp-card-amex', 'jp-card-dankort', 'jp-card-dinersclub', 'jp-card-discover', 'jp-card-jcb', 'jp-card-laser', 'jp-card-maestro', 'jp-card-mastercard', 'jp-card-unionpay', 'jp-card-visa', 'jp-card-visaelectron', 'jp-card-elo'];
 
-Card.defaults = {
+Card.prototype.defaults = {
   formatting: true,
   formSelectors: {
     numberInput: 'input[name="number"]',
@@ -151,7 +145,7 @@ Card.defaults = {
   debug: false
 };
 
-Card.render = function () {
+Card.prototype.render = function () {
   var $cardContainer, baseWidth, name, obj, ref, ref1, selector, ua;
   QJ.append(this.$container, this.template(this.cardTemplate, extend({}, this.options.messages, this.options.placeholders)));
   ref = this.options.cardSelectors;
@@ -193,7 +187,7 @@ Card.render = function () {
   }
 };
 
-Card.attachHandlers = function () {
+Card.prototype.attachHandlers = function () {
   var expiryFilters;
   this.bindVal(this.$numberInput, this.$numberDisplay, {
     fill: false,
@@ -228,7 +222,7 @@ Card.attachHandlers = function () {
   });
 };
 
-Card.handleInitialPlaceholders = function () {
+Card.prototype.handleInitialPlaceholders = function () {
   var el, name, ref, results, selector;
   ref = this.options.formSelectors;
   results = [];
@@ -245,7 +239,7 @@ Card.handleInitialPlaceholders = function () {
   return results;
 };
 
-Card.handle = function (fn) {
+Card.prototype.handle = function (fn) {
   return (function (_this) {
     return function (e) {
       var args;
@@ -256,7 +250,7 @@ Card.handle = function (fn) {
   })(this);
 };
 
-Card.validToggler = function (validatorName) {
+Card.prototype.validToggler = function (validatorName) {
   var isValid;
   if (validatorName === "cardExpiry") {
     isValid = function (val) {
@@ -290,12 +284,12 @@ Card.validToggler = function (validatorName) {
   })(this);
 };
 
-Card.toggleValidClass = function (el, test) {
+Card.prototype.toggleValidClass = function (el, test) {
   QJ.toggleClass(el, this.options.classes.valid, test);
   return QJ.toggleClass(el, this.options.classes.invalid, !test);
 };
 
-Card.handlers = {
+Card.prototype.handlers = {
   setCardType: function ($el, e) {
     var cardType;
     cardType = e.data;

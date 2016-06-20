@@ -38,8 +38,7 @@ TODO
     <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
   </div>
   <div>
-    <input placeholder="MM" type="text" name="CardMonth" card-expiry data-ng-model="card.month" />/
-    <input placeholder="YY" type="text" name="CardYear" card-expiry data-ng-model="card.year" />
+    <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
 
     <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
 
@@ -57,22 +56,20 @@ angular.module('app', ['ssm.card'])
   $scope.card = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
-    expiryMonth: '11',
-    expiryYear: '18',
+    expiry: '11/2018',
     cvc: '123'
   };
 
   $scope.cardPlaceholders = {
     name: 'Your Full Name',
     number: 'xxxx xxxx xxxx xxxx',
-    expiry: 'MM/YY',
+    expiry: 'MM/YYYY',
     cvc: 'xxx'
   };
 
   $scope.cardMessages = {
     validDate: 'valid\nthru',
-    month: 'MM',
-    year: 'YY'
+    expiry: 'MM/YYYY'
   };
 
   $scope.cardOptions = {

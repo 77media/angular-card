@@ -1,14 +1,15 @@
 'use strict';
 
 var QJ = function(selector) {
-  if (QJ.isDOMElement(selector)) {
+  if (!QJ.isDOMElement(selector)) {
     return selector;
   }
   return document.querySelectorAll(selector);
 };
 
 QJ.isDOMElement = function(el) {
-  return el && (el.nodeName !== null);
+  var is = el && (el.nodeName !== null);
+  return is;
 };
 
 var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
