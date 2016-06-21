@@ -1,0 +1,9 @@
+.ssm-card.ssm-card-safari {
+   &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            &:before {
+                @include card-texture($radial-gradient: false);
+            }
+        }
+    }
+}

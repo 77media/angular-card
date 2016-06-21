@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>SSM-Angular-Card Example</title>
-  </head>
-  <body data-ng-app="app" data-ng-controller="ExampleCtrl">
 
-    <form action="#"
-      name="cardForm"
-      data-card
-      data-width="500"
-      data-card-container="#card-container"
-      data-placeholders="cardPlaceholders"
-      data-options="cardOptions"
-      data-messages="cardMessages"
-      >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>SSM-Angular-Card Example</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  <link href="../lib/index.min.css" type="text/css" rel="stylesheet" />
+  <style>
+    .form-control.ng-invalid.ng-dirty {
+      border-color: #c9302c;
+    }
+  </style>
+</head>
 
-      <div>
-          <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
+<body data-ng-app="app" data-ng-controller="ExampleCtrl">
+  <div class="container">
+    <header class="page-header">
+      <h1>SSM-Angular-Card Example</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <form action="#" name="cardForm" role="form" novalidate="novalidate" data-card data-width="300" data-card-container="#card-container"
+            data-placeholders="cardPlaceholders" data-options="cardOptions" data-messages="cardMessages">
+            <div class="form-group clearfix">
+              <div id="card-container"></div>
+            </div>
+            <div class="form-group">
+              <label for="CardNumber" class="sr-only">Card Number</label>
+              <input placeholder="Card number" type="text" name="CardNumber" class="form-control" card-number ng-model="card.number" required
+              />
+            </div>
+            <div class="form-group">
+              <label for="CardName" class="sr-only">Full Name</label>
+              <input placeholder="Full name" type="text" name="CardName" class="form-control" card-name ng-model="card.name" required
+              />
+            </div>
+            <div class="form-group clearfix">
+              <div class="pull-left">
+                <label for="CardExpiry" class="sr-only">Expiration (MM/YYYY)</label>
+                <input placeholder="MM / YYYY" type="text" name="CardExpiry" class="form-control" card-expiry ng-model="card.expiry" style="width:100px"
+                  required />
+              </div>
+              <div class="pull-right">
+                <label for="CardCvc" class="sr-only">Cvc</label>
+                <input placeholder="CVC" type="text" name="CardCvc" class="form-control" card-cvc ng-model="card.cvc" style="width:60px"
+                  required />
+              </div>
+            </div>
+            <div class="text-right">
+              <input type="button" value="Clear" class="btn btn-secondary" ng-click="clear()" />
+              <input type="submit" value="Submit (validate)" class="btn btn-success" ng-click="submitForm(cardForm)" />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4>Instructions</h4>
+            </div>
+            <div class="panel-body">
+              <input type="button" value="Change card" class="btn btn-primary" ng-click="changeCard()" />
 
-          <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-          <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+    </div>
+    <hr />
+    <footer class="page-footer">
+      <p>© 2016 77media, Inc..</p>
+    </footer>
+  </div>
+  <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
+  <script src="../lib/index.js" type="text/javascript"></script>
+  <script src="example.js" type="text/javascript"></script>
 
-          <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+</body>
 
-          <input type="button" value="Change card" data-ng-click="changeCard()" />
-          <input type="button" value="Clear" data-ng-click="clear()" />
-      </div>
-
-    </form>
-
-    <div id="card-container"></div>
-
-    <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
-    <script src="../src/card.js" type="text/javascript"></script>
-    <script src="example.js" type="text/javascript"></script>
-
-  </body>
 </html>

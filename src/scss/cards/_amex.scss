@@ -1,0 +1,34 @@
+@import "card";
+@import "../logos/amex";
+
+$fill-color: #108168;
+
+.ssm-card.ssm-card-amex {
+
+    &.ssm-card-flipped{
+        @include transform(none);
+    }
+
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+
+        .ssm-card-front {
+
+            .ssm-card-logo.ssm-card-amex {
+                opacity: 1;
+            }
+
+            .ssm-card-cvc {
+                visibility: visible;
+            }
+
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

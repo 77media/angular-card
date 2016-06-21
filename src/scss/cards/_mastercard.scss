@@ -1,0 +1,20 @@
+@import "card";
+@import "../logos/mastercard";
+
+$fill-color: #0061A8;
+
+.ssm-card.ssm-card-mastercard {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            .ssm-card-logo.ssm-card-mastercard {
+                box-shadow: none;
+            }
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .ssm-card-logo.ssm-card-mastercard {
+            opacity: 1;
+        }
+    }
+}

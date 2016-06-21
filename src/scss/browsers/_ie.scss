@@ -1,0 +1,31 @@
+.ssm-card.ssm-card-ie-10, .ssm-card.ssm-card-ie-11 {
+    &.ssm-card-flipped {
+        @include transform(0deg);
+        .ssm-card-front {
+            @include transform(rotateY(0deg));
+        }
+        .ssm-card-back {
+            @include transform(rotateY(0deg));
+
+            &:after {
+               left: 18%;
+            }
+
+            .ssm-card-cvc {
+                @include transform(rotateY(180deg));
+                left: 5%;
+            }
+
+            .ssm-card-shiny  {
+                left: 84%;
+                &:after {
+                    left: -480%;
+                    @include transform(rotateY(180deg));
+                }
+            }
+        }
+    }
+}
+.ssm-card.ssm-card-ie-10.ssm-card-amex .ssm-card-back, .ssm-card.ssm-card-ie-11.ssm-card-amex .ssm-card-back {
+    display: none;
+}

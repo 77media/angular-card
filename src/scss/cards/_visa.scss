@@ -1,0 +1,17 @@
+@import "card";
+@import "../logos/visa";
+
+$fill-color: #191278;
+
+.ssm-card.ssm-card-visa {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .ssm-card-logo.ssm-card-visa {
+            opacity: 1;
+        }
+    }
+}

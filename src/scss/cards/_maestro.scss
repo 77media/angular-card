@@ -1,0 +1,20 @@
+@import "card";
+@import "../logos/maestro";
+
+$fill-color: #0B2C5F;
+
+.ssm-card.ssm-card-maestro {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            .ssm-card-logo.ssm-card-maestro {
+                box-shadow: none;
+            }
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .ssm-card-logo.ssm-card-maestro {
+            opacity: 1;
+        }
+    }
+}
