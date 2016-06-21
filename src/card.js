@@ -139,8 +139,8 @@ Card.prototype.defaults = {
     name: 'Full Name'
   },
   classes: {
-    valid: 'ssm-card-valid',
-    invalid: 'ssm-card-invalid'
+    valid: 'ng-valid',
+    invalid: 'ng-invalid'
   },
   debug: false
 };
