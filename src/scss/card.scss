@@ -10,8 +10,8 @@
 @import "cards/visa";
 @import "cards/mastercard";
 @import "cards/maestro";
-@import "cards/dankort";
-@import "cards/elo";
+@import "cards/dinersclub";
+
 
 .ssm-card-container {
     @include perspective(1000px);
