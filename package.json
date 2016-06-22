@@ -1,6 +1,6 @@
 {
   "name": "ssm-angular-card",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Angular directive for visual credit card input and validation.",
   "main": "src/card.js",
   "directories": {

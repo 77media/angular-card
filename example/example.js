@@ -42,7 +42,7 @@ angular.module('app', ['ssm.card'])
 
     $scope.cardMessages = {
       validDate: 'valid\nthru',
-      monthYear: 'MM/YYYY'
+      monthYear: ''
     };
 
     $scope.cardOptions = {

@@ -5,9 +5,6 @@ $fill-color: #0061A8;
 .ssm-card.ssm-card-mastercard {
     &.ssm-card-identified {
         .ssm-card-front, .ssm-card-back {
-            .ssm-card-logo.ssm-card-mastercard {
-                box-shadow: none;
-            }
             &:before {
                 background-color: $fill-color;
             }
@@ -15,6 +12,7 @@ $fill-color: #0061A8;
         .ssm-card-logo.ssm-card-mastercard {
             background-image: url('logos/mastercard.png');
             opacity: 1;
+            height:56px;
         }
     }
 }

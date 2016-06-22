@@ -1,12 +1,10 @@
 @import "card";
 
-$fill-color: #cccccc;
+$fill-color: #888;
 
 .ssm-card {
     .ssm-card-front .ssm-card-logo.ssm-card-dinersclub {
         bottom:auto;
-        right: auto;
-        left: 5%;
         top: 15px;
     }
 }
@@ -24,6 +22,7 @@ $fill-color: #cccccc;
             height:auto;
             opacity: 1;
             width:50%;
+            height:45px;
         }
     }
 }

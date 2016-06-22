@@ -5,9 +5,6 @@ $fill-color: #0B2C5F;
 .ssm-card.ssm-card-maestro {
     &.ssm-card-identified {
         .ssm-card-front, .ssm-card-back {
-            .ssm-card-logo.ssm-card-maestro {
-                box-shadow: none;
-            }
             &:before {
                 background-color: $fill-color;
             }
@@ -15,6 +12,7 @@ $fill-color: #0B2C5F;
         .ssm-card-logo.ssm-card-maestro {
             background-image: url('logos/maestro.png');
             opacity: 1;
+            height:56px;
         }
     }
 }
