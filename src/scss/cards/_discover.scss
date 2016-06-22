@@ -1,15 +1,7 @@
 @import "card";
-@import "../logos/discover";
 
 $fill-color: #86B8CF;
 $highlight-color: #FF6600;
-
-.ssm-card {
-    .ssm-card-front .ssm-card-logo.ssm-card-discover {
-        right: 12%;
-        top: 18%;
-    }
-}
 
 .ssm-card.ssm-card-discover {
 
@@ -20,6 +12,7 @@ $highlight-color: #FF6600;
             }
         }
         .ssm-card-logo.ssm-card-discover {
+            background-image: url('logos/discover.png');
             opacity: 1;
         }
 

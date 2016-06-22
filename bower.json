@@ -1,9 +1,9 @@
 {
   "name": "ssm-angular-card",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "authors": [
     "Aaron King <aking@77media.com>",
-    "Matt Long <mlong@77media.com>"
+    "Matt Long <matt.long@77media.com>"
   ],
   "description": "Angular directive for visual credit card input and validation.",
   "main": "src/card.js",

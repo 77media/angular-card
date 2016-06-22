@@ -1,7 +1,6 @@
 @import "card";
-@import "../logos/amex";
 
-$fill-color: #108168;
+$fill-color: #bc9843;
 
 .ssm-card.ssm-card-amex {
 
@@ -19,6 +18,7 @@ $fill-color: #108168;
         .ssm-card-front {
 
             .ssm-card-logo.ssm-card-amex {
+                background-image: url('logos/amex.png');
                 opacity: 1;
             }
 

@@ -1,5 +1,4 @@
 @import "card";
-@import "../logos/maestro";
 
 $fill-color: #0B2C5F;
 
@@ -14,6 +13,7 @@ $fill-color: #0B2C5F;
             }
         }
         .ssm-card-logo.ssm-card-maestro {
+            background-image: url('logos/maestro.png');
             opacity: 1;
         }
     }

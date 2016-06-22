@@ -1,0 +1,29 @@
+@import "card";
+
+$fill-color: #cccccc;
+
+.ssm-card {
+    .ssm-card-front .ssm-card-logo.ssm-card-dinersclub {
+        bottom:auto;
+        right: auto;
+        left: 5%;
+        top: 15px;
+    }
+}
+
+.ssm-card.ssm-card-dinersclub {
+    &.ssm-card-identified {
+        .ssm-card-front, .ssm-card-back {
+            &:before {
+                background-color: $fill-color;
+            }
+        }
+        .ssm-card-logo.ssm-card-dinersclub {
+            background-image: url('logos/dinersclub.png');
+            background-position:left top;
+            height:auto;
+            opacity: 1;
+            width:50%;
+        }
+    }
+}

@@ -102,7 +102,7 @@ Card.prototype.bindVal = function (el, out, opts) {
 
 
 
-Card.prototype.cardTemplate = '' + '<div class="ssm-card-container">' + '<div class="ssm-card">' + '<div class="ssm-card-front">' + '<div class="ssm-card-logo ssm-card-elo">' + '<div class="e">e</div>' + '<div class="l">l</div>' + '<div class="o">o</div>' + '</div>' + '<div class="ssm-card-logo ssm-card-visa">visa</div>' + '<div class="ssm-card-logo ssm-card-mastercard">MasterCard</div>' + '<div class="ssm-card-logo ssm-card-maestro">Maestro</div>' + '<div class="ssm-card-logo ssm-card-amex"></div>' + '<div class="ssm-card-logo ssm-card-discover">discover</div>' + '<div class="ssm-card-logo ssm-card-dankort"><div class="dk"><div class="d"></div><div class="k"></div></div></div>' + '<div class="ssm-card-lower">' + '<div class="ssm-card-shiny"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-number ssm-card-display">{{number}}</div>' + '<div class="ssm-card-name ssm-card-display">{{name}}</div>' + '<div class="ssm-card-expiry ssm-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="ssm-card-back">' + '<div class="ssm-card-bar"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
+Card.prototype.cardTemplate = '' + '<div class="ssm-card-container">' + '<div class="ssm-card">' + '<div class="ssm-card-front">' + '<div class="ssm-card-logo ssm-card-visa"></div>' + '<div class="ssm-card-logo ssm-card-mastercard"></div>' + '<div class="ssm-card-logo ssm-card-maestro"></div>' + '<div class="ssm-card-logo ssm-card-amex"></div>' + '<div class="ssm-card-logo ssm-card-discover"></div>' + '<div class="ssm-card-logo ssm-card-dinersclub"></div>' + '<div class="ssm-card-lower">' + '<div class="ssm-card-shiny"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-number ssm-card-display">{{number}}</div>' + '<div class="ssm-card-name ssm-card-display">{{name}}</div>' + '<div class="ssm-card-expiry ssm-card-display" data-before="{{monthYear}}" data-after="{{validDate}}">{{expiry}}</div>' + '</div>' + '</div>' + '<div class="ssm-card-back">' + '<div class="ssm-card-bar"></div>' + '<div class="ssm-card-cvc ssm-card-display">{{cvc}}</div>' + '<div class="ssm-card-shiny"></div>' + '</div>' + '</div>' + '</div>';
 
 Card.prototype.template = function (tpl, data) {
   return tpl.replace(/\{\{(.*?)\}\}/g, function (match, key, str) {
@@ -110,7 +110,7 @@ Card.prototype.template = function (tpl, data) {
   });
 };
 
-Card.prototype.cardTypes = ['ssm-card-amex', 'ssm-card-dankort', 'ssm-card-dinersclub', 'ssm-card-discover', 'ssm-card-jcb', 'ssm-card-laser', 'ssm-card-maestro', 'ssm-card-mastercard', 'ssm-card-unionpay', 'ssm-card-visa', 'ssm-card-visaelectron', 'ssm-card-elo'];
+Card.prototype.cardTypes = ['ssm-card-amex', 'ssm-card-dinersclub', 'ssm-card-discover','ssm-card-maestro', 'ssm-card-mastercard', 'ssm-card-visa'];
 
 Card.prototype.defaults = {
   formatting: true,

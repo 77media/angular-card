@@ -1,5 +1,4 @@
 @import "card";
-@import "../logos/mastercard";
 
 $fill-color: #0061A8;
 
@@ -14,6 +13,7 @@ $fill-color: #0061A8;
             }
         }
         .ssm-card-logo.ssm-card-mastercard {
+            background-image: url('logos/mastercard.png');
             opacity: 1;
         }
     }
