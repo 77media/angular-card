@@ -240,9 +240,9 @@
     opacity: 0;
     right: 5%;
     bottom: 5%;
-    -webkit-transition: 400ms;
-    -moz-transition: 400ms;
-    transition: 400ms; }
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    transition: all 400ms linear; }
   .ssm-card .ssm-card-front .ssm-card-lower {
     width: 90%;
     position: absolute;
